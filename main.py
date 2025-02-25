@@ -5,6 +5,7 @@ import requests
 from array_to_dict import atd
 from group_user_by_age import group_user_by_age
 from user import Users
+from bank import SavingAccount, DepositAccount
 
 def q1():
     user_version = input("Enter version for requests: ")
@@ -78,10 +79,29 @@ def q5():
     print(res)
     users_data.print()
 
+def q6():
+    saving_obj = SavingAccount(7, 5000, "123456789")
+    deposit_obj = DepositAccount(10000,"638547385")
+    print("Saving Account.")
+    print(saving_obj.check_balance())
+    print(saving_obj.calc_interest())
+    print(saving_obj.deposit(2000))
+    print(saving_obj.check_balance())
+    print(saving_obj.withdrawal(500))
+    print(saving_obj.withdrawal(1500))
+    print(saving_obj.check_balance())
+    print()
+    print("Deposit Account.")
+    print(deposit_obj.check_balance())
+    print(deposit_obj.deposit(6000))
+    print(deposit_obj.check_balance())
+    print(deposit_obj.withdrawal(4000))
+    print(deposit_obj.withdrawal(1000000))
 
 if __name__ == "__main__":
     # q1()
     # q2()
     # q3()
     # q4()
-    q5()
+    # q5()
+    q6()
